@@ -1,0 +1,2 @@
+# MQ
+Practiceing Django
