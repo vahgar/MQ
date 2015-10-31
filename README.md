@@ -1,4 +1,4 @@
 # MQ
-Practiceing Django
+Practicing Django
 
 YO!
