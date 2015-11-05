@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<html>
+<head>
+	<title>Base</title>
+</head>
+<header>
+<link rel="stylesheet" href="{% static 'base/css/materialize.min.css' %}">
+<link rel="stylesheet" href="{% static 'base/css/base.css' %}">
+</header>
+<body>
+	<div id="WelcomeText">
+		<p class="flow-text">Hey What's up?,I am Learning Django.</p>
+	</div>
+	<div>
+		<ul>
+			<li><a href="{% url 'login' %}">Login &nbsp; </a></li>
+			<li><a href="{% url 'signup' %}"> Signup</a></li>
+		</ul>
+	</div>
+</body>
+</html>

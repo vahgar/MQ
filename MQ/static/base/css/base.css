@@ -1,0 +1,11 @@
+.flow-text {
+	text-align: center;
+}
+#WelcomeText {
+	margin-top: 5%;
+}
+ul {
+
+	display:flex;
+	justify-content:center;
+}
