@@ -1,38 +1,24 @@
+{% load staticfiles %}
 <html>
 <head>
-	<title>Login Page</title>
-	
-	<link rel="stylesheet" type="text/css" href="materialize.min.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<link rel="stylesheet" type="text/css" href="login.css">
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
+  <title>Login</title>
+  <header>
+    <link rel="stylesheet" href="{% static 'base/css/materialize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'account/login.css' %}">
+  </header>
 </head>
 <body>
-
-<div class="border">
-	<div id="bimage">
-	<form autocomplete="off">
-
-	<div class="width">
-		<div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label class="active" for="email">Email</label>
-        </div>
-      </div>
- 
-
-  <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label class="active" for="password">Password</label>
-        </div>
-      </div>
-  </div>
- 
-	</form>
-	<div class="Z"><a class="waves-effect waves-light btn">Log In</a></div>
+  <div id ="email_div">
+    <div class="row">
+<form method="">{% csrf_token %}
+ <!--  <div class="row">
+        <div class="input-field col s12"> -->
+ {{ form.as_p }}
+<!-- </div>
+</div> -->
+<div><input id="submit" type="submit" value="Log In"></div>
+</form>
 </div>
 </div>
 </body>
