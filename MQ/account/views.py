@@ -39,8 +39,17 @@ def handle_login(request):
 		auth_login(request,user)
 		print('asxiuahha')
 		return render(request,'home.html')
+	if not f.is_valid():
+		print("X")
+		form = LoginForm()
+		Error = "*Invalid Username or Password"
+		context = {'form':form,'Error':Error}
+		return render(request,'account/login.html',context)
 
-
+@require_GET
+def logout(request):
+	auth_logout(request)
+	return render(request,'base.html')
 
 
 def home(request):
