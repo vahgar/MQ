@@ -115,5 +115,5 @@ MEDIA_URL = '/media/'
 
 LOGIN_URL = 'base'
 LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/admin/'
 

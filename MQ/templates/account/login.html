@@ -11,7 +11,7 @@
 <body>
   <div id ="email_div">
     <div class="row">
-<form method="">{% csrf_token %}
+<form method="POST" action="{% url 'home' %}">{% csrf_token %}
  <!--  <div class="row">
         <div class="input-field col s12"> -->
  {{ form.as_p }}
