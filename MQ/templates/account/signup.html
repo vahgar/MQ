@@ -9,15 +9,14 @@
   </header>
 </head>
 <body>
-I am Signup. :).
 <div id="details">
-<form method="GET" action="">{% csrf_token %}
+<form method="POST" action="">{% csrf_token %}
  <!--  <div class="row">
         <div class="input-field col s12"> -->
  {{ form.as_p }}
 <!-- </div>
 </div> -->
-<div><input id="submit" type="submit" value="Submit"></div>
+<div id="button"><input id="submit" type="submit" value="Create User"></div>
 </div>
 </body>
 </html>

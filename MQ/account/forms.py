@@ -24,10 +24,24 @@ class LoginForm(forms.Form):
         return self.user_cache
  
 class SignUp(forms.ModelForm):
-    
+    password1 = forms.CharField(label='Password', widget = forms.PasswordInput)
+    password2 = forms.CharField(label='Confirm Password', widget = forms.PasswordInput,)
+    def clean_password2(self):
+        data_password1 = self.cleaned_data['password1']
+        data_password2 = self.cleaned_data['password2']
+        if data_password1 and data_password2 and data_password1 != data_password2:
+            raise forms.ValidationError("Passwords don't match")
+        return data_password2
+    def save(self, commit = True):
+        user = super(SignUp, self).save(commit = False)
+        user.set_password(self.cleaned_data.get('password1'))
+        user.is_active = False
+        if commit:
+            user.save()
+        return user
     class Meta:
         model = CustomUser
-        fields = ['username','email','password']
+        fields = ['username','email','phone_number']
 
 
 

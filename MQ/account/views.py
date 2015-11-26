@@ -25,9 +25,14 @@ def login(request):
 	return render(request,'account/login.html',context)
 
 def signup(request):
-	form = SignUp()
-	context = {"form":form}
-	return render(request,'account/signup.html',context)
+	form = SignUp(request.POST)
+	if form.is_valid():
+		user=form.save();
+		f=LoginForm()
+		return render(request,'account/login.html',{'f':form})
+	else:
+		context = {"form":form}
+		return render(request,'account/signup.html',context)
 
 @require_POST
 def handle_login(request):
