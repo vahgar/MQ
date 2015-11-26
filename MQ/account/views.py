@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import render,redirect
-from .forms import LoginForm
+from .forms import LoginForm,SignUp
 from django.contrib.auth import login as auth_login, logout as auth_logout
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods, require_GET, require_POST
@@ -25,7 +25,9 @@ def login(request):
 	return render(request,'account/login.html',context)
 
 def signup(request):
-	return render(request,'account/signup.html')
+	form = SignUp()
+	context = {"form":form}
+	return render(request,'account/signup.html',context)
 
 @require_POST
 def handle_login(request):
@@ -52,5 +54,3 @@ def logout(request):
 	return render(request,'base.html')
 
 
-def home(request):
-	return render (request,'home.html')

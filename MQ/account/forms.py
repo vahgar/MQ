@@ -22,9 +22,12 @@ class LoginForm(forms.Form):
 
     def get_user(self):
         return self.user_cache
-
-
-
+ 
+class SignUp(forms.ModelForm):
+    
+    class Meta:
+        model = CustomUser
+        fields = ['username','email','password']
 
 
 

@@ -1,8 +1,23 @@
+{% load staticfiles %}
 <html>
 <head>
 	<title></title>
+	<header>
+    <link rel="stylesheet" href="{% static 'base/css/materialize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'account/signup.css' %}">
+  </header>
 </head>
 <body>
 I am Signup. :).
+<div id="details">
+<form method="GET" action="">{% csrf_token %}
+ <!--  <div class="row">
+        <div class="input-field col s12"> -->
+ {{ form.as_p }}
+<!-- </div>
+</div> -->
+<div><input id="submit" type="submit" value="Submit"></div>
+</div>
 </body>
 </html>
